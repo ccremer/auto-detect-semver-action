@@ -2,10 +2,22 @@ name: 'Auto-detect Next SemVer'
 description: 'A GitHub action that determines the next release version based on merged Pull Requests'
 author: 'ccremer'
 inputs:
-  milliseconds: # change this
+  configuration:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'Defines the relative path to the configuration file.'
+  fromTag:
+    description: 'Defines the previous tag to compare against.'
+  token:
+    description: 'Defines the token to use to execute the git API requests with, uses `env.GITHUB_TOKEN` by default.'
+outputs:
+  nextVersion:
+    description: 'The next version determined.'
+  incremetedPatch:
+    description: 'Whether a patch version was bumped.'
+  incremetedMinor:
+    description: 'Whether a minor version was bumped.'
+  incremetedMajor:
+    description: 'Whether a major version was bumped.'
 runs:
   using: 'node16'
   main: 'dist/index.js'

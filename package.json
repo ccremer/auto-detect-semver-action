@@ -30,10 +30,14 @@
   "author": "ccremer",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "1.9.1"
+    "@actions/core": "1.9.1",
+    "@octokit/rest": "19.0.4",
+    "release-changelog-builder-action": "github:mikepenz/release-changelog-builder-action",
+    "semver": "7.3.7"
   },
   "devDependencies": {
     "@types/node": "18.7.19",
+    "@types/semver": "^7.3.12",
     "@typescript-eslint/parser": "5.38.0",
     "@vercel/ncc": "0.34.0",
     "eslint": "8.24.0",
